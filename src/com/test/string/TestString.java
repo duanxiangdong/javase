@@ -1,12 +1,18 @@
 package com.test.string;
 
 import java.util.StringTokenizer;
-
+/**
+ * 字符串测试
+ */
 public class TestString {
+	
 	public static void main(String[] args) {
-		test02();
+		test03();
 	}
-
+	
+	/**
+	 * null
+	 */
 	private static void test01() {
 		try {
 			throw new NullPointerException();
@@ -20,7 +26,10 @@ public class TestString {
 			System.out.println(res3);
 		}
 	}
-
+	
+	/**
+	 * StringTokenizer
+	 */
 	private static void test02() {
 		String str = "1,2,3,4";
 		StringTokenizer sk = new StringTokenizer(str, ",");
@@ -28,5 +37,18 @@ public class TestString {
 			System.out.println(sk.nextToken());
 		}
 	}
-
+	
+	/**
+	 * split
+	 */
+	private static void test03(){
+		String order = "001|002";
+		String[] orders = order.split("\\|");
+		int length = orders.length;
+		System.out.println("长度:"+length);
+		for(int i=0;i<length;i++){
+			System.out.println(orders[i]);
+		}
+		
+	}
 }

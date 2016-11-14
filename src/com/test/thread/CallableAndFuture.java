@@ -69,6 +69,7 @@ public class CallableAndFuture {
         });
 		try {
 			System.out.println(future.get());
+			threadPool.shutdown();
 		} catch (InterruptedException e) {			
 			e.printStackTrace();
 		} catch (ExecutionException e) {			
