@@ -1,13 +1,15 @@
 package com.test.string;
 
 import java.util.StringTokenizer;
+import java.util.regex.Pattern;
 /**
  * 字符串测试
  */
 public class TestString {
+	private static final Pattern PATTERN = Pattern.compile("([\\w]+\\|[\\w]+)+");
 	
 	public static void main(String[] args) {
-		test03();
+		test04();
 	}
 	
 	/**
@@ -49,6 +51,15 @@ public class TestString {
 		for(int i=0;i<length;i++){
 			System.out.println(orders[i]);
 		}
+		
+	}
+	
+	/**
+	 * Pattern
+	 */
+	private static void test04(){
+		String order = "bus001";
+		System.out.println(PATTERN.matcher(order).matches());
 		
 	}
 }
